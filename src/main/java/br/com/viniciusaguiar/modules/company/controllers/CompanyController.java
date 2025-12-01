@@ -3,6 +3,7 @@ package br.com.viniciusaguiar.modules.company.controllers;
 import br.com.viniciusaguiar.exceptions.UserFoundException;
 import br.com.viniciusaguiar.modules.company.entities.CompanyEntity;
 import br.com.viniciusaguiar.modules.company.useCases.CreateCompanyUseCase;
+import jakarta.validation.Valid;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class CompanyController {
     private CreateCompanyUseCase createCompanyUseCase;
 
     @PostMapping("/")
-    public ResponseEntity<Object> create(@RequestBody CompanyEntity companyEntity ){
+    public ResponseEntity<Object> create(@Valid @RequestBody CompanyEntity companyEntity ){
         try {
             var result = this.createCompanyUseCase.execute(companyEntity);
             return ResponseEntity.ok().body(result);
