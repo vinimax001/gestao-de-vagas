@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class AuthCompanyUseCase {
 
 
-    @Value("${security.token.secret=JAVAGAS_@123#}")
+    @Value("${security.token.secret}")
     private String secretkey;
 
     @Autowired
@@ -27,7 +27,7 @@ public class AuthCompanyUseCase {
     public String execute(AuthCompanyDTO authCompanyDTO) throws AuthenticationException {
         var company = this.companyRepository.findByUsername(authCompanyDTO.getUsername()).orElseThrow(
                 () -> {
-                    throw new UsernameNotFoundException("Company not found");
+                    throw new UsernameNotFoundException("Username/password incorrect");
                 });
 
 
