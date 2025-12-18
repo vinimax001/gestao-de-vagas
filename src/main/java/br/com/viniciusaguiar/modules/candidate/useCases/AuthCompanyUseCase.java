@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
+import java.time.Instant;
+
 @Service
 public class AuthCompanyUseCase {
 
@@ -38,6 +41,7 @@ public class AuthCompanyUseCase {
         }
         Algorithm algorithm =  Algorithm.HMAC256(secretkey);
         var token = JWT.create().withIssuer("javagas")
+                .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
                 .withSubject(company.getId().toString())
                 .sign(algorithm);
         return token;
