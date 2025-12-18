@@ -1,4 +1,4 @@
-package br.com.viniciusaguiar.modules.company.useCases;
+package br.com.viniciusaguiar.modules.candidate.useCases;
 
 import br.com.viniciusaguiar.modules.company.entities.JobEntity;
 import br.com.viniciusaguiar.modules.company.repositories.JobRepository;

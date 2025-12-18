@@ -2,7 +2,7 @@ package br.com.viniciusaguiar.modules.company.controllers;
 
 
 import br.com.viniciusaguiar.modules.company.entities.JobEntity;
-import br.com.viniciusaguiar.modules.company.useCases.CreateJobUseCase;
+import br.com.viniciusaguiar.modules.candidate.useCases.CreateJobUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

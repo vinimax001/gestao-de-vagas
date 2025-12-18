@@ -1,10 +1,8 @@
 package br.com.viniciusaguiar.modules.company.controllers;
 
-import br.com.viniciusaguiar.exceptions.UserFoundException;
 import br.com.viniciusaguiar.modules.company.entities.CompanyEntity;
-import br.com.viniciusaguiar.modules.company.useCases.CreateCompanyUseCase;
+import br.com.viniciusaguiar.modules.candidate.useCases.CreateCompanyUseCase;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
